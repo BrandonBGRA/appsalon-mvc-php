@@ -1,0 +1,57 @@
+@use 'base/variables' as v; // Importamos el css de las variables
+@use 'base/mixins' as mq; // Importamos los mixins para usarlos aqui
+
+.contenedor-app {
+    @include mq.tablet { //Agregamos mixin de media querie a tamaño tablet
+        display: grid; // Agregamos las propiedades de grid
+        grid-template-columns: repeat(2, 1fr); // 2 columnas de 1f
+        min-height: 100vh;
+    }
+
+    .imagen {
+        height: 20rem; // Para que se pueda visualizar correctamente en un tamaño mas pequeño
+        background-image: url(../img/1.jpg); // Insertamos la imagen
+        background-size: cover; // Ajusta la imagen
+        background-position: center center; // Centramos la imagen
+        @include mq.tablet {
+            height: auto; // Tome toda la altura desde un dispositivo mas grande
+            
+        }
+    }
+
+    .app {
+        width: 95%; // Que tome el 95% del contenedor dejando un espacio
+        margin: 0 auto;
+        padding: 3rem 0; // 3rem arriba y abajo, 0 izquierda y derecha
+    }
+
+
+    .barra {
+
+        margin: v.$separacion 0 0 0;
+
+        @include mq.tablet {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .boton {
+            @include mq.boton(v.$negro, v.$blanco);
+            margin: 0;
+        }
+    }
+}
+
+.barra-servicios {
+    margin-bottom: v.$separacion;
+
+    @include mq.tablet {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .boton {
+        margin: 0 0 1rem 0;
+    }
+}

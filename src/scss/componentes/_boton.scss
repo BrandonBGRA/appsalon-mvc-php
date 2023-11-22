@@ -1,0 +1,9 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as mq;
+
+.boton {
+    @include mq.boton(v.$azul, v.$blanco); // Boton azul con letras blancas
+}
+.boton-eliminar{
+    @include mq.boton(v.$rojo, v.$blanco);
+}

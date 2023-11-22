@@ -1,0 +1,28 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as mq;
+
+.formulario {
+    margin-top: 5rem;
+    width: 100%; // Va a tomar todo el espacio disponible
+}
+
+.campo {
+    display: flex; // Agregamos las propiedades de flexbox
+    margin-bottom: 2rem; // Separacion hacia abajo
+    align-items: center; // Centramos horizontalmente
+    label {
+        flex: 0 0 10rem; // le damos un ancho fijo de 100px
+    }
+    input {
+        flex: 1; // Toman el resto del tamaño
+        border: none;
+        padding: calc(v.$separacion / 4); // padding de 5rem/4 = 1.25rem
+        border-radius: 1rem; 
+
+        &:disabled {
+            background-color: lighten(v.$negro, 25%);
+            color: v.$blanco;
+            cursor: not-allowed;
+        }
+    }
+}

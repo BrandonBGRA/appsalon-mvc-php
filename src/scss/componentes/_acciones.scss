@@ -1,0 +1,17 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as mq;
+
+.acciones {
+    margin-top: v.$separacion;
+    @include mq.tablet {
+        display: flex; // Agregamos las propiedades de flexbox
+        justify-content: space-between; // Coloca un enlace a la izquierda y el otro a la derecha
+        align-items: center;
+    }
+    a {
+        color: v.$blanco;
+        display: block; // agregamos las propiedades de bloque, forzando el salto de linea
+        margin-bottom: calc(v.$separacion / 2); // Margen inferir de 2.5rem
+        text-align: center;
+    }
+}

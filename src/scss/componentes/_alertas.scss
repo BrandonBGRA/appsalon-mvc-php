@@ -1,0 +1,20 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as mq;
+
+.alerta {
+    padding: calc(v.$separacion / 4);
+    color: v.$blanco;
+    width: 100%;
+    display: block; // Logra que las alertas se muestren una arriba de la otra (en fila)
+    margin-bottom: 2rem; // Separar cada una de las alertas
+    text-align: center;  // Se centra el texto
+    font-weight: v.$bold; // Estilo de la letra
+    text-transform: uppercase; // Cambiar todo a mayusculas
+
+    &.error { // Cuando este presente error
+        background-color: v.$rojo; // Fondo rojo
+    }
+    &.exito {
+        background-color: v.$verde;
+    }
+}
